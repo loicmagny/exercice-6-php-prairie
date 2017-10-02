@@ -1,13 +1,16 @@
 <?php
-$langage = array("HTML","CSS","Javascript","PHP");
-var_dump ($langage);
-echo "<br>";
-sort($langage);
-foreach ($langage as $key => $value) {
-  echo "langage[".$key."] = ".$value."<br />\n";
+$language = array("HTML","CSS","Javascript","PHP");
+function alphabeticalorder($board){
+  $order = new ArrayObject($board);
+  $order -> asort ();
+  foreach ($order as $key => $value){
+    echo "$key = $value.<br />\n";
+  }
 }
-var_dump (implode ($langage));
-echo "<br>";
-$fusion = $langage[0].$langage[1].$langage[2].$langage[3];
-echo strrev ($fusion);
+function boardmerge($language){
+  $merge = "$language[0]"."$language[1]"."$language[2]"."$language[3]";
+  echo strrev ("$merge");
+}
+alphabeticalorder($language);
+boardmerge($language);
 ?>
